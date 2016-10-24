@@ -5,7 +5,7 @@ This repository contains project work for Udacity's [Data Analyst Nanodegree](ht
 ### Courses:
 - [Statistics](https://www.udacity.com/course/intro-to-descriptive-statistics--ud827)
 - [Intro to Data Science](https://www.udacity.com/course/intro-to-data-analysis--ud170)
-- [Data Wrangling with MongoDB](https://www.udacity.com/course/data-analysis-with-r--ud651)
+- [Data Wrangling with MongoDB](https://www.udacity.com/course/data-wrangling-with-mongodb--ud032)
 - [Data Analysis with R](https://www.udacity.com/course/data-analysis-with-r--ud651)
 - [Intro to Machine Learning](https://www.udacity.com/course/intro-to-machine-learning--ud120)
 - [Intro to HTML & CSS](https://www.udacity.com/course/intro-to-html-and-css--ud304)
