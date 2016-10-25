@@ -1,0 +1,17 @@
+Websites and resources used in completion of the Wrangle OpenStreetMap Project:
+
+Udacity Data Wrangling with MongoDB Course:
+https://www.udacity.com/courses/ud032
+
+Sample project provided:
+https://docs.google.com/document/d/1F0Vs14oNEs2idFJR3C_OPxwS6L0HPliOii-QpbmrMo4/pub?embedded=True
+
+https://mapzen.com/data/metro-extracts
+
+https://en.wikipedia.org/wiki/Milwaukee
+https://wiki.openstreetmap.org/wiki/Main_Page
+https://wiki.openstreetmap.org/wiki/Way
+https://wiki.openstreetmap.org/wiki/Node
+http://ipython.org/ipython-doc/stable/notebook/index.html
+https://help.github.com/articles/markdown-basics/
+

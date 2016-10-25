@@ -1,0 +1,16 @@
+The Map Area chosen was Milwaukee, WI, United States
+
+https://www.openstreetmap.org/relation/251075
+
+Link to MapZen OSM XML file:
+
+https://s3.amazonaws.com/metro-extracts.mapzen.com/milwaukee_wisconsin.osm.bz2
+
+Milwaukee is a relatively large Metropolitan Area in the Midwest of the United States.
+It is the largest city in the state of Wisconsin. 
+The population of the city of Milwaukee is: 594,833
+The population of the Milwaukee Metropolitan Area is: 2,043,904
+It is located on the southwestern shore of Lake Michigan.
+
+
+The reason that I chose this area, is because I live in this area.  
