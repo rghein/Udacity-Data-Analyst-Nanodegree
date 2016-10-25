@@ -1,0 +1,16 @@
+This folder (IntermediateCode) contains some of the intermediate code used to complete the 
+Udacity Data Science nanodegree Introduction to Machine Learning final project.
+
+One of the programs (data_exploration.py) was used to gather the information 
+necessary to answer question one of the final report.
+
+The other 4 Python files are programs used to implement 4 different
+machine learning algorithms and those programs are named to reflect which 
+algorithm is being implemented.  The code as it is now will run to produce the 
+results documented "model performance" section of the final report.  
+Some code is commented out of the program to show some of the exploration 
+involved in completion of the project.  Some of these intermediate programs 
+were used to do such things as determine which of the features is being selected 
+in SelectKBest and to run Grid Search to find helpful tuning parameters.  
+
+ 
