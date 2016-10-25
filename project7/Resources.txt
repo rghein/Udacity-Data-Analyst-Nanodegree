@@ -1,0 +1,27 @@
+Resources Used In A/B Testing Project:
+
+Udacity A/B Testing Class:
+https://www.udacity.com/course/ab-testing--ud257
+
+Sample Size Calculator:
+http://www.evanmiller.org/ab-testing/sample-size.html
+
+Sign And Binomial Test Calculator:
+http://graphpad.com/quickcalcs/binomial1/
+
+Z-score Table:
+https://www.math.upenn.edu/~yuecheng/images/zscoretable.pdf
+
+Wikepedia:
+https://en.wikipedia.org/wiki/Bonferroni_correction
+https://en.wikipedia.org/wiki/Multiple_comparisons_problem
+https://en.wikipedia.org/wiki/Normalization_(statistics)
+https://en.wikipedia.org/wiki/Type_I_and_type_II_errors
+
+When To Use Bonferroni Correction:
+http://onlinelibrary.wiley.com/doi/10.1111/opo.12131/full
+
+
+
+
+
