@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+    <title>Titanic Survival Charts</title>
+
+    <!-- Add minimal styling to page -->
+    <style>
+      body {
+        background-color: #FAFAFA;
+        font-family: Verdana;
+      }
+    </style>
+  </head>
+
+  <body class="container">
+
+    <div id="chartContainer0" style="text-align:center;">
+
+      <!-- Page Heading and Overall Summary -->
+      <br><br>
+      <b><font size = "6">Titanic Survival</font></b>
+      <br><br>
+      <b><font size = "4">
+      The charts below compare the passenger demographics of the passengers on the Titanic<br>
+      in an effort to determine what characterstics of the passengers might have<br>
+      been different between those who did and did not survive the shipwreck</font></b>
+      <br><br><br>
+
+      <!-- First Chart Summary -->
+      <b>The first chart shows the number of survivors from each Passenger Class.</b><br>
+      (Passenger Class is a proxy for socio-economic status:<br>
+      1st - Upper; 2nd - Middle; 3rd - Lower)
+      <br><br>
+
+      <!-- Create First Chart using D3.js/dimple.js -->
+      <script type="text/javascript">
+        var svg0 = dimple.newSvg("#chartContainer0", 590, 400);
+        d3.csv("titanic_data_modified.csv", function (data) {
+          data['Pclass'] = +data['Pclass'];
+          var myChart = new dimple.chart(svg0, data);
+          var x = myChart.addCategoryAxis("x", "Passenger Class");
+          x.title = "Passenger Class";
+          x.addOrderRule("Passenger Class");
+          var y = myChart.addMeasureAxis("y", "Number of Passengers");
+          myChart.addSeries("Survived", dimple.plot.bar);
+          myChart.assignColor("Non-Survivor", "green", "black", 0.8);
+          myChart.assignColor("Survivor", "yellow", "black", 0.8);
+          myChart.setBounds(60, 30, 510, 305);
+          myChart.addLegend(65, 10, 510, 20, "right");
+          myChart.draw();
+          });
+      </script>
+
+      <br><br>
+    </div>
+
+
+    <div id="chartContainer1" style="text-align:center;">
+
+      <!-- Second Chart Summary -->
+      <br><br>
+      <b>The second chart shows the number of survivors from each sex.</b>
+      <br><br>
+
+      <!-- Create Second Chart using D3.js/dimple.js -->
+      <script type="text/javascript">
+        var svg1 = dimple.newSvg("#chartContainer1", 590, 400);
+        d3.csv("titanic_data_modified.csv", function (data) {
+          var myChart = new dimple.chart(svg1, data);
+          var x = myChart.addCategoryAxis("x", "Sex");
+          x.title = "Passenger Sex";
+          var y = myChart.addMeasureAxis("y", "Number of Passengers");
+          myChart.addSeries("Survived", dimple.plot.bar);
+          myChart.assignColor("Non-Survivor", "red", "black", 0.8);
+          myChart.assignColor("Survivor", "blue", "black", 0.8);
+          myChart.setBounds(60, 30, 510, 305);
+          myChart.addLegend(65, 10, 510, 20, "right");
+          myChart.draw();
+          });
+      </script>
+    </div>
+
+
+    <div id="chartContainer2" style="text-align:center;">
+
+      <!-- Third Chart Summary -->
+      <br><br>
+      <b>The third chart shows the number of survivors from different age groups.</b><br>
+      (Children are passengers under the age of 18, Adults are 18 and over.<br>
+      The age of many passengers is not in the data set and those<br>
+      passengers are categorized as "Age Unknown")
+      <br><br>
+
+      <!-- Create Third Chart using D3.js/dimple.js -->
+      <script type="text/javascript">
+        var svg2 = dimple.newSvg("#chartContainer2", 590, 400);
+        d3.csv("titanic_data_modified.csv", function (data) {
+          var myChart = new dimple.chart(svg2, data);
+          var x = myChart.addCategoryAxis("x", "Age Category");
+          x.addOrderRule(["Child", "Adult", "Age Unknown"]);
+          x.title = "Passenger Age Category"
+          var y = myChart.addMeasureAxis("y", "Number of Passengers");
+          myChart.addSeries("Survived", dimple.plot.bar);
+          myChart.assignColor("Non-Survivor", "orange", "black", 0.8);
+          myChart.assignColor("Survivor", "brown", "black", 0.8);
+          myChart.setBounds(60, 30, 510, 305);
+          myChart.addLegend(65, 10, 510, 20, "right");
+          myChart.draw();
+          });
+      </script>
+      <br><br>
+    </div>
+
+  </body>
+
+</html>
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+
+    <title>Titanic Survival Charts</title>
+
+    <!-- Add minimal styling to page -->
+    <style>
+      body {
+        background-color: #FAFAFA;
+        font-family: Verdana;
+      }
+
+      .line-separator{
+        height:1px;
+        background:#717171;
+        border-bottom:1px solid #313030;
+      }
+    </style>
+  </head>
+
+  <body class="container">
+    <div id="chartContainer0" style="text-align:center;">
+
+      <!-- Page Heading and Overall Summary -->
+      <br>
+      <b><font size = "6">Titanic Survival</font></b>
+      <br>
+      <b><font size = "4">
+      The charts below show differences in passenger information between<br>
+      those passengers who survived and those who did not on the Titanic</font></b>
+      <br><br><br>
+
+      <div class="line-separator"></div>
+
+      <!-- First Chart Title -->
+      <br><font size = "5"><b>Survivors From Each Passenger Class</b></font><br>
+      <!-- First Chart Analysis -->
+      <b>The chart shows that the 1st Class had a higher survival rate than<br>
+      2nd Class, and 2nd Class had a higher survival rate than 3rd Class</b><br>
+      <font size = "2">1st class 63% survival (136 survived of 216 total), <br>
+      2nd class 47% (87 of 184), and 3rd class 24% (119 of 491)</font><br>
+
+      <!-- Create First Chart using D3.js/dimple.js -->
+      <script type="text/javascript">
+        var svg0 = dimple.newSvg("#chartContainer0", 590, 400);
+        d3.csv("titanic_data_modified.csv", function (data) {
+          data['Pclass'] = +data['Pclass'];
+          var myChart = new dimple.chart(svg0, data);
+          var x = myChart.addCategoryAxis("x", ["Passenger Class", "Survived"]);
+          x.title = "Passenger Class";
+          x.addOrderRule("Passenger Class");
+          var y = myChart.addMeasureAxis("y", "Number of Passengers");
+          myChart.addSeries("Survived", dimple.plot.bar);
+          myChart.assignColor("Non-Survivor", "green", "black", 0.8);
+          myChart.assignColor("Survivor", "yellow", "black", 0.8);
+          myChart.setBounds(60, 30, 510, 305);
+          myChart.addLegend(65, 10, 510, 20, "right");
+          myChart.draw();
+          });
+      </script>
+
+    </div>
+
+    <div class="line-separator"></div>
+
+    <div id="chartContainer1" style="text-align:center;">
+
+       <!-- Second Chart Title -->
+      <br><font size = "5"><b>Survivors From Each Sex</b></font>
+      <!-- Second Chart Analysis -->
+      <br><b>The chart shows that Females had a higher survival rate than Males</b><br>
+      <font size = "2">Females had a 74% survival rate (233 survived out of 314 total) and<br>
+      Males had a 19% survival rate (109 survived out of 577 total)</font><br>
+
+      <!-- Create Second Chart using D3.js/dimple.js -->
+      <script type="text/javascript">
+        var svg1 = dimple.newSvg("#chartContainer1", 590, 400);
+        d3.csv("titanic_data_modified.csv", function (data) {
+          var myChart = new dimple.chart(svg1, data);
+          var x = myChart.addCategoryAxis("x", ["Sex", "Survived"]);
+          x.title = "Passenger Sex";
+          var y = myChart.addMeasureAxis("y", "Number of Passengers");
+          myChart.addSeries("Survived", dimple.plot.bar);
+          myChart.assignColor("Non-Survivor", "red", "black", 0.8);
+          myChart.assignColor("Survivor", "blue", "black", 0.8);
+          myChart.setBounds(60, 30, 510, 305);
+          myChart.addLegend(65, 10, 510, 20, "right");
+          myChart.draw();
+          });
+      </script>
+
+    </div>
+
+    <div class="line-separator"></div>
+
+    <div id="chartContainer2" style="text-align:center;">
+
+      <!-- Third Chart Title -->
+      <br><font size = "5"><b>Survivors From Different Age Groups</b></font>
+      <!-- Third Chart Analysis -->
+      <br><b>The chart shows that Children had a higher survival rate than Adults</b><br>
+      <font size = "2">Children had a 54% survival rate (61 survived out of 113 total) and<br>
+      Adults had a 38% survival rate (229 survived out of 601 total)<br>
+      (Those with Age Unknown had a 29% survival rate (52 survived out of 177 total))</font><br>
+
+
+      <!-- Create Third Chart using D3.js/dimple.js -->
+      <script type="text/javascript">
+        var svg2 = dimple.newSvg("#chartContainer2", 590, 400);
+        d3.csv("titanic_data_modified.csv", function (data) {
+          var myChart = new dimple.chart(svg2, data);
+          var x = myChart.addCategoryAxis("x", ["Age Category", "Survived"]);
+          x.addOrderRule(["Child", "Adult", "Age Unknown"]);
+          x.title = "Passenger Age Category"
+          var y = myChart.addMeasureAxis("y", "Number of Passengers");
+          myChart.addSeries("Survived", dimple.plot.bar);
+          myChart.assignColor("Non-Survivor", "orange", "black", 0.8);
+          myChart.assignColor("Survivor", "brown", "black", 0.8);
+          myChart.setBounds(60, 30, 510, 305);
+          myChart.addLegend(65, 10, 510, 20, "right");
+          myChart.draw();
+          });
+      </script>
+
+    </div>
+
+  </body>
+
+</html>
+

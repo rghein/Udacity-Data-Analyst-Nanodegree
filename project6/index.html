@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+
+    <title>Titanic Survival Charts</title>
+
+    <!-- Add styling to page -->
+    <style>
+      body {
+        background-color: #FAFAFA;
+        font-family: Verdana;
+      }
+
+      .line-separator{
+        height:1px;
+        background:#717171;
+        border-bottom:1px solid #313030;
+      }
+    </style>
+  </head>
+
+  <body class="container">
+    <div id="chartContainer0" style="text-align:center;">
+
+      <!-- Page Heading and Overall Summary -->
+      <br><b><font size = "6">Titanic Survival</font></b>
+      <br><b><font size = "4">
+      The charts below show differences in passenger characteristics between<br>
+      those passengers who survived and those who did not on the Titanic</font></b>
+      <br><br><br>
+
+      <div class="line-separator"></div>
+
+      <!-- First Chart Title -->
+      <br><font size = "5"><b>Survivors From Each Passenger Class</b></font><br>
+      <!-- First Chart Analysis -->
+      <b>The chart shows that the 1st Class had a higher survival rate than<br>
+      2nd Class, and 2nd Class had a higher survival rate than 3rd Class</b><br>
+
+      <!-- Create First Chart using D3.js/dimple.js -->
+      <script type="text/javascript">
+        var svg0 = dimple.newSvg("#chartContainer0", 590, 400);
+        d3.csv("class_chart.csv", function (data) {
+          // Coerce strings to numbers:
+          data["Percentage Survived"] = +data["Percentage Survived"];
+          data["Passenger Class"] = +data["Passenger Class"];
+          //  Create chart:
+          var myChart = new dimple.chart(svg0, data);
+          //  Add color to chart:
+          myChart.defaultColors = [new dimple.color("green")];
+          //  Create x & y axes:
+          var x = myChart.addCategoryAxis("x", "Passenger Class");
+          x.addOrderRule("Passenger Class");
+          x.title = "Passenger Class";
+          var y = myChart.addMeasureAxis("y", "Percentage Survived");
+          //  Set chart type, set bounds, and draw chart:
+          myChart.addSeries(null, dimple.plot.bar);
+          myChart.setBounds(60, 30, 510, 305);
+          myChart.draw();
+          });
+      </script>
+
+    </div>
+
+    <div class="line-separator"></div>
+
+    <div id="chartContainer1" style="text-align:center;">
+
+       <!-- Second Chart Title -->
+      <br><font size = "5"><b>Survivors From Each Sex</b></font>
+      <!-- Second Chart Analysis -->
+      <br><b>The chart shows that Females had a higher survival rate than Males</b><br>
+
+      <!-- Create Second Chart using D3.js/dimple.js -->
+      <script type="text/javascript">
+        var svg1 = dimple.newSvg("#chartContainer1", 590, 400);
+        d3.csv("sex_chart.csv", function (data) {
+          // Coerce strings to numbers:
+          data["Percentage Survived"] = +data["Percentage Survived"];
+          //  Create chart:
+          var myChart = new dimple.chart(svg1, data);
+          //  Add color to chart:
+          myChart.defaultColors = [new dimple.color("blue")];
+          //  Create x & y axes:
+          var x = myChart.addCategoryAxis("x", "Sex");
+          x.title = "Passenger Sex";
+          var y = myChart.addMeasureAxis("y", "Percentage Survived");
+          //  Set chart type, set bounds, and draw chart:
+          myChart.addSeries(null, dimple.plot.bar);
+          myChart.setBounds(60, 30, 510, 305);
+          myChart.draw();
+          });
+      </script>
+
+
+    </div>
+
+    <div class="line-separator"></div>
+
+    <div id="chartContainer2" style="text-align:center;">
+
+      <!-- Third Chart Title -->
+      <br><font size = "5"><b>Survivors From Different Age Groups</b></font>
+      <!-- Third Chart Analysis -->
+      <br><b>The chart shows that Children had a higher survival rate than Adults</b><br>
+      <font size = "2">Child is under 18 years of age, Adult is 18 and over.<br>
+      177 of the 891 passengers in the Titanic database do not have an age<br>
+      recorded.  Those passengers are inclued in "Age Unknown" for completeness.</font><br>
+
+
+      <!-- Create Third Chart using D3.js/dimple.js -->
+      <script type="text/javascript">
+        var svg2 = dimple.newSvg("#chartContainer2", 590, 400);
+        d3.csv("age_chart.csv", function (data) {
+          // Coerce strings to numbers:
+          data["Percentage"] = +data["Percentage"];
+          //  Create chart:
+          var myChart = new dimple.chart(svg2, data);
+          //  Add color to chart:
+          myChart.defaultColors = [new dimple.color("brown")];
+          //  Create x & y axes:
+          var x = myChart.addCategoryAxis("x", "Age Category");
+          x.title = "Passenger Age Category";
+          var y = myChart.addMeasureAxis("y", "Percentage Survived");
+          //  Set chart type, set bounds, and draw chart:
+          myChart.addSeries(null, dimple.plot.bar);
+          myChart.setBounds(60, 30, 510, 305);
+          myChart.draw();
+          });
+      </script>
+
+    </div>
+
+  </body>
+
+</html>
+

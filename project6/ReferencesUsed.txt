@@ -1,0 +1,35 @@
+References Used in Project Completion:
+
+Udacity Intro to HTML and CSS Class:  
+https://www.udacity.com/course/intro-to-html-and-css--ud304 
+
+Udacity Intro to JavaScript Course:  
+https://www.udacity.com/course/intro-to-html-and-css--ud304
+
+Udacity Data Visualization and D3.js Course:  
+https://www.udacity.com/course/data-visualization-and-d3js--ud507
+
+Link to Specific Titanic Data Used:  
+https://www.google.com/url?q=https://www.udacity.com/api/nodes/5420148578/supplemental_media/titanic-datacsv/download&sa=D&ust=1475090699719000&usg=AFQjCNF5F5mKo92XbpeSRrwL8hpB4-Y4FA 
+
+More Detailed Information Regarding the Titanic Data:  
+https://www.kaggle.com/c/titanic/data
+
+dimple Documentation:  
+https://github.com/PMSI-AlignAlytics/dimple/wiki
+
+dimple Examples from dimple Documentation:  
+http://dimplejs.org/examples_index.html
+
+Flowchart to help choose which chart to use:  
+https://apandre.files.wordpress.com/2011/02/chartchooserincolor.jpg
+
+Wikipedia Pages used in README.md file:
+https://en.wikipedia.org/wiki/RMS_Titanic
+https://en.wikipedia.org/wiki/Women_and_children_first
+
+CSS Line Separator:
+http://cre8tivenerd.com/2011/01/create-a-line-separator-using-only-css/
+
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.0.0.min.js"></script>
+    <title>Titanic Survival Charts</title>
+  </head>
+
+  <body class="container">
+
+    <!-- Create First Chart using D3.js/dimple.js -->
+    <div id="chartContainer0">
+      <script type="text/javascript">
+        var svg0 = dimple.newSvg("#chartContainer0", 1200, 600);
+        d3.csv("titanic_data.csv", function (data) {
+          data['Pclass'] = +data['Pclass'];
+          var myChart = new dimple.chart(svg0, data);
+          var x = myChart.addCategoryAxis("x", "Pclass");
+          x.addOrderRule("Pclass");
+          var y = myChart.addMeasureAxis("y", "Survived");
+          myChart.addSeries("Pclass", dimple.plot.bar);
+          myChart.addLegend(65, 10, 510, 40, "right");
+          myChart.draw();
+      });
+      </script>
+    </div>
+
+
+    <!-- Create Second Chart using D3.js/dimple.js -->
+    <div id="chartContainer1">
+      <script type="text/javascript">
+        var svg1 = dimple.newSvg("#chartContainer1", 1200, 400);
+        d3.csv("titanic_data.csv", function (data) {
+          data['Pclass'] = +data['Pclass'];
+          var myChart = new dimple.chart(svg1, data);
+          var x = myChart.addCategoryAxis("x", "Sex");
+          x.addOrderRule("Sex");
+          var y = myChart.addMeasureAxis("y", "Survived");
+          myChart.addSeries("Sex", dimple.plot.bar);
+          myChart.addLegend(65, 10, 510, 20, "right");
+          myChart.draw();
+          });
+      </script>
+    </div>
+
+    <!-- Create Third Chart using D3.js/dimple.js -->
+    <div id="chartContainer2">
+      <script type="text/javascript">
+        var svg2 = dimple.newSvg("#chartContainer2", 1200, 400);
+        d3.csv("titanic_data.csv", function (data) {
+          data["Age"] = +data["Age"];
+          var myChart = new dimple.chart(svg2, data);
+          var x = myChart.addCategoryAxis("x", "Age");
+          x.addOrderRule("Age");
+          var y = myChart.addMeasureAxis("y", "Survived");
+          myChart.addSeries(null, dimple.plot.bar);
+          myChart.addLegend(65, 10, 510, 20, "right");
+          myChart.draw();
+          });
+      </script>
+    </div>
+  </body>
+
+</html>
+
