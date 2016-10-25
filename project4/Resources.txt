@@ -1,0 +1,33 @@
+Resources used in completing Explore And Summarize Data Project
+For Udacity's Data Analyst Nanodegree
+
+Udacity's Data Analysis with R Class:
+https://www.udacity.com/course/data-analysis-with-r--ud651
+
+Provided Project Example: 
+https://s3.amazonaws.com/udacity-hosted-downloads/ud651/diamondsExample.html
+
+Provided description of White Wine Data:
+https://s3.amazonaws.com/udacity-hosted-downloads/ud651/wineQualityInfo.txt
+
+Wikipedia pages on wine:
+https://en.wikipedia.org/wiki/Wine
+https://en.wikipedia.org/wiki/Sweetness_of_wine#Residual_sugar
+
+Other web sites:
+https://docs.google.com/document/d/1-f3wM3mJSkoWxDmPjsyRnWvNgM57YUPloucOIl07l4c/pub
+http://daringfireball.net/projects/markdown/syntax
+http://www.cookbook-r.com/Graphs/Facets_%28ggplot2%29/
+http://svitsrv25.epfl.ch/R-doc/library/RColorBrewer/html/ColorBrewer.html
+http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf
+http://www.cookbook-r.com/Graphs/Legends_%28ggplot2%29/
+
+
+
+
+
+
+
+
+
+
